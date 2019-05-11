@@ -1,0 +1,104 @@
+*{
+    font-family: 'Roboto Slab', serif;
+    color: #3861A7;
+}
+
+.grid-wrapper{
+    display: grid;
+    grid-template-columns: minmax(min-content, 300px) 1fr 1fr;
+    grid-template-rows: 1fr 200px 200px;
+    grid-template-areas:
+        "header header header"
+        "nav section section"
+        "nav section section";
+}
+
+.animation{
+    animation-name: rotationAndColorChanging;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    background-color: silver;
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    position: absolute; top: 500px; left: 350px;
+}
+
+.inactiveAnimation{
+    background-color: silver;
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    position: absolute; top: 500px; left: 350px;
+}
+
+@keyframes rotationAndColorChanging {
+    0%, 100%{
+        background-color: darkviolet;
+        top: 500px;
+        left: 350px;
+    }
+    25%{
+        background-color: deeppink;
+        top: 500px;
+        left: 650px;
+    }
+    50%{
+        background-color: green;
+        top: 800px;
+        left: 650px;
+    }
+    75%{
+        background-color: brown;
+        top: 800px;
+        left: 350px;
+    }
+}
+
+.animation:nth-of-type(2){
+    animation-delay: 1s;
+}
+
+.animation:nth-of-type(3){
+    animation-delay: 2s;
+}
+
+.animation:nth-of-type(4){
+    animation-delay: 3s;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+section {
+    grid-area: section;
+}
+
+li{
+    list-style-type: none;
+}
+
+.changeAnimation{
+    width: 200px;
+    height: 50px;
+    background: rgba(179,212,255,0.5);
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5%;
+}
+
+.changeAnimation p{
+    margin-left: 25px;
+}
+
+.changeAnimation:hover{
+    background: #4f66ff;
+    -webkit-text-fill-color: white;
+}
